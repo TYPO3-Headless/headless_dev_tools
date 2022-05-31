@@ -1,0 +1,86 @@
+{
+  "name": "friendsoftypo3/headless-dev-tools",
+  "type": "typo3-cms-extension",
+  "description": "Headless dev tools - helpful code for local development",
+  "keywords": [
+    "TYPO3",
+    "headless",
+    "dev",
+    "tools",
+    "pwa",
+    "json"
+  ],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "authors": [
+    {
+      "name": "Tymoteusz Motylewski",
+      "role": "Head"
+    },
+    {
+      "name": "Tomasz Woldański",
+      "role": "Developer"
+    },
+    {
+      "name": "TYPO3 PWA Initiative",
+      "email": "extensions@macopedia.pl",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "php": ">= 7.4",
+    "typo3/cms-core": "^10.4 | ^11.5",
+    "friendsoftypo3/headless": "^2.6 | ^3.0"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.15.0",
+    "friendsofphp/php-cs-fixer": "^3.1",
+    "helmich/typo3-typoscript-lint": "^2.1",
+    "justinrainbow/json-schema": "^5.2",
+    "seld/jsonlint": "^1.8",
+    "symfony/yaml": "^5.3"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "vendor-dir": ".Build/vendor"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "headless_dev_tools"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "FriendsOfTYPO3\\HeadlessDevTools\\": "Classes"
+    }
+  },
+  "scripts": {
+    "ci:composer:normalize": "@composer normalize --dry-run",
+    "ci:json:lint": [
+      "find . -name '*.json' -not -path '*.Build/vendor*' | xargs .Build/vendor/bin/jsonlint -q"
+    ],
+    "ci:php:cs-fixer": [
+      "php-cs-fixer fix -v --dry-run --using-cache no --diff"
+    ],
+    "ci:php:lint": "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+    "ci:yaml:lint": "find . ! -path '*.Build/*' -name '*.yml' | xargs php ./.Build/vendor/bin/yaml-lint",
+    "fix:php:cs-fixer": [
+      "php-cs-fixer fix -v --using-cache no"
+    ],
+    "prepare-release": [
+      "rm .gitignore",
+      "rm -rf .Build",
+      "rm -rf .github",
+      "rm -rf Tests",
+      "rm .editorconfig",
+      "rm .gitattributes",
+      "rm .php-cs-fixer.php",
+      "rm CONTRIBUTING.rst"
+    ]
+  }
+}
