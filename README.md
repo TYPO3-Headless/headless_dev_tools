@@ -16,11 +16,5 @@ Install extension using composer
 Just like `f:debug` but dies afterwards, so its output is actually visible in the frontend response.
 
 ```xml
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-    xmlns:hdt="http://typo3.org/ns/FriendsOfTYPO3/HeadlessDevTools/ViewHelpers"
-    data-namespace-typo3-fluid="true"
->
-
-<hdt:debug title="_all">{_all}</hdt:debug>
+<headlessDevTools:debug title="_all">{_all}</headlessDevTools:debug>
 ```
