@@ -16,5 +16,7 @@ defined('TYPO3_MODE') || die();
         class_exists(\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class)) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class]['className'] = \FriendsOfTYPO3\HeadlessDevTools\Xclass\RemoteResourceCollection::class;
     }
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['headlessDevTools'] = ['FriendsOfTYPO3\\HeadlessDevTools\\ViewHelpers'];
 })('headless_dev_tools');
 

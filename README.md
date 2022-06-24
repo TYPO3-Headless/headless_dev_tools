@@ -8,3 +8,13 @@ Install extension using composer
 ``composer require --dev friendsoftypo3/headless-dev-tools``
 
 **DO NOT USE IN PRODUCTION** always install as require-dev only
+
+## ViewHelpers
+
+### Debug ViewHelper
+
+Just like `f:debug` but dies afterwards, so its output is actually visible in the frontend response.
+
+```xml
+<headlessDevTools:debug title="_all">{_all}</headlessDevTools:debug>
+```
