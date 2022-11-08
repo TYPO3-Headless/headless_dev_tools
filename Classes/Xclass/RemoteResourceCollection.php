@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the "headless dev tools" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.md file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 namespace FriendsOfTYPO3\HeadlessDevTools\Xclass;
@@ -11,6 +19,7 @@ use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 use function str_replace;
 
 class RemoteResourceCollection extends \IchHabRecht\Filefill\Resource\RemoteResourceCollection
