@@ -18,5 +18,10 @@ defined('TYPO3_MODE') || die();
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['headlessDevTools'] = ['FriendsOfTYPO3\\HeadlessDevTools\\ViewHelpers'];
-})('headless_dev_tools');
 
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+        $extension,
+        'setup',
+        "@import 'EXT:" . $extension . "/Configuration/TypoScript/setup.typoscript'"
+    );
+})('headless_dev_tools');
