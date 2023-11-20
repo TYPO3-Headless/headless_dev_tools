@@ -7,13 +7,13 @@
  * LICENSE.md file that was distributed with this source code.
  */
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (static function (string $extension) {
     $features = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\Features::class);
 
     if ($features->isFeatureEnabled('headless.storageProxy') &&
-        class_exists(\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class)) {
+        class_exists(\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class, false)) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class]['className'] = \FriendsOfTYPO3\HeadlessDevTools\Xclass\RemoteResourceCollection::class;
     }
 
