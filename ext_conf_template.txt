@@ -1,2 +1,0 @@
-# cat=Settings; type=string; label=LLL:EXT:headless_dev_tools/Resources/Private/Language/locallang_be.xlf:yamlPath
-yamlPath = EXT:headless_dev_tools/Configuration/Yaml/HeadlessModule.yml
