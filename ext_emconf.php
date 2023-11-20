@@ -16,12 +16,12 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Macopedia Sp. z o.o.',
     'category' => 'fe',
     'internal' => '',
-    'version' => '1.0.1',
+    'version' => '2.0',
     'constraints' => [
         'depends' => [
-            'frontend' => '10.4.0-11.5.99',
-            'typo3' => '10.4.0-11.5.99',
-            'headless' => '2.6-3.99'
+            'frontend' => '12.4.0-12.4.99',
+            'typo3' => '12.4.0-12.4.99',
+            'headless' => '4.0-4.99'
         ],
         'conflicts' => [],
         'suggests' => [],

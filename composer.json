@@ -31,8 +31,8 @@
   "require": {
     "ext-json": "*",
     "php": ">= 7.4",
-    "typo3/cms-core": "^10.4 | ^11.5",
-    "friendsoftypo3/headless": "^2.6 | ^3.0 | dev-master"
+    "typo3/cms-core": "^12.4",
+    "friendsoftypo3/headless": " ^4.0 || dev-master"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.15.0",
