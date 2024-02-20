@@ -18,7 +18,9 @@ defined('TYPO3') || die();
     $features = GeneralUtility::makeInstance(Features::class);
 
     if ($features->isFeatureEnabled('headless.storageProxy') &&
-        class_exists(\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class, false)) {
+        class_exists(\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class)) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\IchHabRecht\Filefill\Resource\RemoteResourceCollection::class]['className'] = \FriendsOfTYPO3\HeadlessDevTools\Xclass\RemoteResourceCollection::class;
+        // Temp fix crashing for v12
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\IchHabRecht\Filefill\Form\Element\ShowMissingFiles::class]['className'] = \FriendsOfTYPO3\HeadlessDevTools\Xclass\ShowMissingFiles::class;
     }
 })();
