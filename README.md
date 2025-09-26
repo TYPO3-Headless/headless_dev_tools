@@ -9,6 +9,16 @@ Install extension using composer
 
 **DO NOT USE IN PRODUCTION** always install as require-dev only
 
+## Admin Panel
+
+This extension provides a replacement for EXT:adminpanel's middleware to attach the adminpanel's HTML to the end of the rendered markup.
+
+```
+page.config.admPanel = 1
+```
+
+This renders the adminpanels HTML "as is" to the end of your JSON under the property key `admPanel`.
+
 ## ViewHelpers
 
 ### Debug ViewHelper
